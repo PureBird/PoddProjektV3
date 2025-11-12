@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace PoddProjektV3._2
 {
     internal static class Program
@@ -12,6 +14,7 @@ namespace PoddProjektV3._2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            Debug.WriteLine("hallå");
         }
     }
 }
