@@ -4,6 +4,9 @@ namespace PoddProjektV3._2
 {
     internal static class Program
     {
+
+        private static readonly MongoDBServices service = new MongoDBServices();
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -15,6 +18,17 @@ namespace PoddProjektV3._2
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
             Debug.WriteLine("hallå");
+
+            Medlem medlem1 = new Medlem("1", "Axel", "Axel@gmail.com", 10);
+
+            service.LaggTillMedlem(medlem1);
+
+            List<Medlem> allaMedlemmar = service.HamtaAllaMedlemmar();
+
+            foreach (Medlem m in allaMedlemmar)
+            {
+                System.Diagnostics.Debug.WriteLine(m.Namn);
+            }
         }
     }
 }
