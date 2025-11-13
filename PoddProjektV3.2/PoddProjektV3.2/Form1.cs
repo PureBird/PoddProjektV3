@@ -6,5 +6,9 @@ namespace PoddProjektV3._2
         {
             InitializeComponent();
         }
+        private void VisaPodd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
