@@ -8,6 +8,7 @@ namespace PoddProjektV3._2.Models
 {
     internal class Kategori
     {
+        public string Name { get; set; }
         public List<Podcast> PoddLista { get; set; }
 
     }
