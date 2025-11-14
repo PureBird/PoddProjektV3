@@ -1,6 +1,6 @@
 ﻿namespace PoddProjektV3._2
 {
-    partial class Form1
+    partial class PodVisaren
     {
         /// <summary>
         ///  Required designer variable.
