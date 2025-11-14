@@ -10,5 +10,10 @@ namespace PoddProjektV3._2
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
