@@ -1,3 +1,4 @@
+using PoddProjektV3._2.Models;
 using System.Diagnostics;
 
 namespace PoddProjektV3._2
@@ -19,15 +20,20 @@ namespace PoddProjektV3._2
             Application.Run(new Form1());
             Debug.WriteLine("hallå");
 
-            Medlem medlem1 = new Medlem("1", "Axel", "Axel@gmail.com", 10);
+            Avsnitt avsnitt1 = new Avsnitt("Duschen", "Duschen är kall idag", "2025-11-14");
 
-            service.LaggTillMedlem(medlem1);
+            List<Avsnitt> listAvsnitt1 = new List<Avsnitt>();
+            listAvsnitt1.Add(avsnitt1);
 
-            List<Medlem> allaMedlemmar = service.HamtaAllaMedlemmar();
+            Podcast podcast1 = new Podcast("1", "dusch podcasten", "En podd att lyssna på i duschen", "Humor", listAvsnitt1);
 
-            foreach (Medlem m in allaMedlemmar)
+            service.LaggTillPodcast(podcast1);
+
+            List<Podcast> allaPodcasts = service.HamtaAllaPodcasts();
+
+            foreach (Podcast p in allaPodcasts)
             {
-                System.Diagnostics.Debug.WriteLine(m.Namn);
+                System.Diagnostics.Debug.WriteLine(p.Titel);
             }
         }
     }
