@@ -25,10 +25,10 @@ namespace PoddProjektV3
         }
 
 
-        public bool PodcastFinns(string titel)
+        public bool PodcastFinns(string ID)
         {
 
-            var filter = Builders<Podcast>.Filter.Eq(p => p.Titel, titel);
+            var filter = Builders<Podcast>.Filter.Eq(p => p.Id, ID);
 
             return podcastKollektion.Find(filter).Any();
 
@@ -36,7 +36,7 @@ namespace PoddProjektV3
 
         public void LaggTillPodcast(Podcast p)
         {
-            if (!PodcastFinns(p.Titel))
+            if (!PodcastFinns(p.Id))
             {
                 podcastKollektion.InsertOne(p);
             }
@@ -49,9 +49,9 @@ namespace PoddProjektV3
             return PodcastLista;
         }
 
-        public Podcast HamtaPodcast(string titel)
+        public Podcast HamtaPodcast(string ID)
         {
-            var filter = Builders<Podcast>.Filter.Eq(p => p.Titel, titel);
+            var filter = Builders<Podcast>.Filter.Eq(p => p.Id, ID);
 
             return podcastKollektion.Find(filter).FirstOrDefault();
         }
@@ -61,7 +61,7 @@ namespace PoddProjektV3
 
         public bool UppdateraPodcast(Podcast updateradPodcast)
         {
-            var filter = Builders<Podcast>.Filter.Eq(p => p.Titel, updateradPodcast.Titel);
+            var filter = Builders<Podcast>.Filter.Eq(p => p.Id, updateradPodcast.Id);
             var updatering = Builders<Podcast>.Update
                 .Set(p => p.Titel, updateradPodcast.Titel)
                 .Set(p => p.Beskrivning, updateradPodcast.Beskrivning)
@@ -72,9 +72,9 @@ namespace PoddProjektV3
             return resultat.ModifiedCount > 0;
         }
 
-        public void TaBortPodcast(string titel)
+        public void TaBortPodcast(string ID)
         {
-            var filter = Builders<Podcast>.Filter.Eq(p => p.Titel, titel);
+            var filter = Builders<Podcast>.Filter.Eq(p => p.Id, ID);
             podcastKollektion.DeleteOne(filter);
         }
 
