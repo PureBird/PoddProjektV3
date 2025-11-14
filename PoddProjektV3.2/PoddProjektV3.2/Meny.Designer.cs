@@ -39,9 +39,9 @@
             Register.Name = "button1";
             Register.Size = new Size(229, 65);
             Register.TabIndex = 0;
-            Register.Text = "button1";
+            Register.Text = "Register";
             Register.UseVisualStyleBackColor = true;
-            Register.Click += button1_Click;
+            Register.Click += registerBtn_Click;
             // 
             // button2
             // 
@@ -49,8 +49,9 @@
             Sök.Name = "button2";
             Sök.Size = new Size(229, 65);
             Sök.TabIndex = 1;
-            Sök.Text = "button2";
+            Sök.Text = "Sök ny podd";
             Sök.UseVisualStyleBackColor = true;
+            Sök.Click += sokBtn_Click;
             // 
             // button3
             // 
@@ -58,8 +59,9 @@
             Kategori.Name = "button3";
             Kategori.Size = new Size(229, 65);
             Kategori.TabIndex = 2;
-            Kategori.Text = "button3";
+            Kategori.Text = "Se kategorier";
             Kategori.UseVisualStyleBackColor = true;
+            Kategori.Click += kategoriBtn_Click;
             // 
             // Meny
             // 
@@ -73,6 +75,31 @@
             Text = "Meny";
             ResumeLayout(false);
         }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            Register registerForm = new Register();
+
+            registerForm.Show();
+            this.Hide();
+        }
+
+        private void sokBtn_Click(object sender, EventArgs e)
+        {
+            PodVisaren sokForm = new PodVisaren();
+
+            sokForm.Show();
+            this.Hide();
+        }
+
+        private void kategoriBtn_Click(object sender, EventArgs e)
+        {
+            // objekt kategoriForm = new object();
+
+            //kategoriForm.Show
+            //this.Hide();
+        }
+
 
         #endregion
 
