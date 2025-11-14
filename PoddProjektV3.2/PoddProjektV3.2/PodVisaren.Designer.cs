@@ -32,9 +32,6 @@
             textBox1 = new TextBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            Titel = new DataGridViewTextBoxColumn();
-            avsnittKolumn = new DataGridViewTextBoxColumn();
-            beskrivningKolumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -73,32 +70,14 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Titel, avsnittKolumn, beskrivningKolumn });
             dataGridView1.Location = new Point(12, 154);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(755, 67);
+            dataGridView1.Size = new Size(755, 252);
             dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Titel
-            // 
-            Titel.HeaderText = "Titel";
-            Titel.MinimumWidth = 8;
-            Titel.Name = "Titel";
-            // 
-            // avsnittKolumn
-            // 
-            avsnittKolumn.HeaderText = "Antal Avsnitt";
-            avsnittKolumn.MinimumWidth = 8;
-            avsnittKolumn.Name = "avsnittKolumn";
-            // 
-            // beskrivningKolumn
-            // 
-            beskrivningKolumn.HeaderText = "Beskrivning";
-            beskrivningKolumn.MinimumWidth = 8;
-            beskrivningKolumn.Name = "beskrivningKolumn";
-            // 
-            // Form1
+            // PodVisaren
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -107,7 +86,7 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
-            Name = "Form1";
+            Name = "PodVisaren";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -120,8 +99,5 @@
         private TextBox textBox1;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Titel;
-        private DataGridViewTextBoxColumn avsnittKolumn;
-        private DataGridViewTextBoxColumn beskrivningKolumn;
     }
 }
