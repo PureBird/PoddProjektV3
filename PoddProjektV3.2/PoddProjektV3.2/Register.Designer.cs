@@ -34,6 +34,7 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            tillbakaBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             header.AutoSize = true;
             header.Font = new Font("Stencil", 26F, FontStyle.Bold | FontStyle.Italic);
-            header.Location = new Point(58, 27);
+            header.Location = new Point(55, 70);
             header.Name = "header";
             header.Size = new Size(239, 52);
             header.TabIndex = 0;
@@ -50,7 +51,7 @@
             // comboBoxFilter
             // 
             comboBoxFilter.FormattingEnabled = true;
-            comboBoxFilter.Location = new Point(66, 82);
+            comboBoxFilter.Location = new Point(66, 136);
             comboBoxFilter.Name = "comboBoxFilter";
             comboBoxFilter.Size = new Size(300, 28);
             comboBoxFilter.TabIndex = 1;
@@ -61,7 +62,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridView1.Location = new Point(66, 146);
+            dataGridView1.Location = new Point(66, 192);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(610, 270);
@@ -86,11 +87,23 @@
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             // 
+            // tillbakaBtn
+            // 
+            tillbakaBtn.Location = new Point(33, 25);
+            tillbakaBtn.Name = "tillbakaBtn";
+            tillbakaBtn.Size = new Size(94, 29);
+            tillbakaBtn.TabIndex = 3;
+            tillbakaBtn.TabStop = false;
+            tillbakaBtn.Text = "<- Tillbaka";
+            tillbakaBtn.UseVisualStyleBackColor = true;
+            tillbakaBtn.Click += tillbakaBtn_Click;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 488);
+            Controls.Add(tillbakaBtn);
             Controls.Add(dataGridView1);
             Controls.Add(comboBoxFilter);
             Controls.Add(header);
@@ -101,6 +114,12 @@
             PerformLayout();
         }
 
+        private void tillbakaBtn_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["Meny"].Show();
+            this.Close();
+        }
+
         #endregion
 
         private Label header;
@@ -109,5 +128,6 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Button tillbakaBtn;
     }
 }
