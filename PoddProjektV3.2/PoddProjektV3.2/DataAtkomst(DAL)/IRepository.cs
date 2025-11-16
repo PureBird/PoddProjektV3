@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PoddProjektV3._2.DataAtkomst_DAL_
 {
-    internal interface IRepository
+    public interface IRepository<T>
     {
+        public void LaggTill(T entitet);
+        public bool Uppdatera(T entitet);
+        public bool Radera(string id);
+        public T? HamtaMedId(string id);
+        public List<T> HamtaAllt();
     }
 }
